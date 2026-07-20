@@ -161,23 +161,34 @@
   document.getElementById('form-kontak').addEventListener('submit', function(event) {
     event.preventDefault(); // Mencegah reload halaman secara default
 
-    // Ambil data input
+    // 1. Ambil data input dari formulir
     const nama = document.getElementById('nama').value;
     const email = document.getElementById('email').value;
     const subjek = document.getElementById('subjek').value;
     const pesan = document.getElementById('pesan').value;
 
-    // Logika pengiriman simulasi (bisa disambungkan ke backend PHP / API nantinya)
-    console.log("Pesan Terkirim:", { nama, email, subjek, pesan });
+    // 2. Tentukan nomor WhatsApp tujuan
+    // Gunakan format internasional (awalan 62 untuk Indonesia) tanpa tanda plus (+) atau angka 0 di depan.
+    const noWhatsApp = "6281234567890"; // Sesuaikan dengan nomor WhatsApp toko Anda
 
-    // Tampilkan notifikasi sukses
+    // 3. Format pesan yang akan dikirimkan ke WhatsApp
+    // %0A adalah kode untuk garis baru (Enter) di URL
+    const teksWhatsApp = `Halo Azizah Cosmetic, saya menghubungi Anda dari website.%0A%0A*Detail Pengirim:*%0A- Nama: ${nama}%0A- Email: ${email}%0A- Subjek: ${subjek}%0A%0A*Isi Pesan:*%0A${pesan}`;
+
+    // 4. Buat link API WhatsApp
+    const urlWhatsApp = `https://api.whatsapp.com/send?phone=${6283861441588}&text=${teksWhatsApp}`;
+
+    // 5. Buka link WhatsApp di tab baru
+    window.open(urlWhatsApp, '_blank');
+
+    // 6. Tampilkan notifikasi sukses di halaman web
     const alertBox = document.getElementById('pesan-sukses');
     alertBox.style.display = 'block';
 
-    // Reset isi form
+    // 7. Reset isi form agar kosong kembali
     this.reset();
 
-    // Sembunyikan alert otomatis setelah 5 detik
+    // 8. Sembunyikan alert otomatis setelah 5 detik
     setTimeout(() => {
       alertBox.style.display = 'none';
     }, 5000);
