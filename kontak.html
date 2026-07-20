@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azizah Cosmetic - Kontak Kami</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Layout Grid Utama untuk Kontak */
+  .kontak-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 768px) {
+    .kontak-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Info Detail Toko */
+  .info-wrapper {
+    background: var(--white, #ffffff);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--pink-soft, #f0dcc7);
+  }
+
+  .info-item {
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .info-item h4 {
+    color: var(--rose-gold-dark, #9B5A70);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+  }
+
+  .info-item p {
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  /* Area Peta Simulasi */
+  .peta-box {
+    margin-top: 30px;
+    height: 200px;
+    background: #eef2f3;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    border: 1px dashed #ccc;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+  }
+
+  /* Feedback Alert Sukses */
+  .alert-sukses {
+    display: none;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid #c3e6cb;
+  }
+</style>
+</head>
+<body>
+
+<header id="beranda-header">
+  <h1>Hubungi Kami</h1>
+  <p class="tagline">Punya pertanyaan seputar produk atau kemitraan? Kami siap membantu Anda</p>
+</header>
+
+<nav class="menu">
+  <a href="beranda.html">Beranda</a>
+  <a href="katalog.html">Katalog Produk</a>
+  <a href="stok.html">Ketersediaan Stok</a>
+  <a href="kontak.html" class="active">Kontak</a>
+</nav>
+
+<section id="kontak-section" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+  <div class="kontak-container">
+    
+    <div class="info-wrapper">
+      <h3 style="color: var(--rose-gold-dark, #9B5A70); font-family: 'Playfair Display', serif; margin-bottom: 20px; font-size: 1.8rem;">Informasi Toko</h3>
+      
+      <div class="info-item">
+        <h4>Alamat Toko</h4>
+        <p>Jl. Merpati No. 45, Komplek Retail Kencana, Blok C1<br>Jakarta Selatan, Indonesia</p>
+      </div>
+
+      <div class="info-item">
+        <h4>Jam Operasional</h4>
+        <p>Senin - Sabtu: 09.00 - 20.00 WIB<br>Minggu: 10.00 - 16.00 WIB</p>
+      </div>
+
+      <div class="info-item">
+        <h4>Kontak Layanan</h4>
+        <p>WhatsApp: +62 812-3456-7890<br>Email: support@azizahcosmetic.com</p>
+      </div>
+
+      <div class="peta-box">
+  <!-- Letakkan iframe Google Maps di sini -->
+  <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+    </div>
+
+    <div class="formulir" style="margin-top: 0; height: 100%;">
+      <h3 style="color: var(--rose-gold-dark, #9B5A70); font-family: 'Playfair Display', serif; margin-bottom: 20px; font-size: 1.8rem;">Kirim Pesan</h3>
+      
+      <div id="pesan-sukses" class="alert-sukses">
+        Terima kasih! Pesan Anda telah berhasil dikirim. Tim kami akan segera menghubungi Anda.
+      </div>
+
+      <form id="form-kontak">
+        <div class="form-group">
+          <label for="nama">Nama Lengkap</label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Alamat Email</label>
+          <input type="email" id="email" name="email" placeholder="contoh@email.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subjek">Subjek</label>
+          <input type="text" id="subjek" name="subjek" placeholder="Pertanyaan Produk / Keluhan / Lainnya" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pesan">Isi Pesan</label>
+          <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan detail pertanyaan atau pesan Anda di sini..." style="width: 100%; padding: 10px; border: 1px solid #f0dcc7; border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 0.9rem; resize: vertical;" required></textarea>
+        </div>
+
+        <input type="submit" value="Kirim Pesan Sekarang" style="width: 100%; margin-top: 15px;">
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  Copyright &copy; 2026 Azizah Cosmetic. Semua Hak Dilindungi.
+</footer>
+
+<script>
+  document.getElementById('form-kontak').addEventListener('submit', function(event) {
+    event.preventDefault(); // Mencegah reload halaman secara default
+
+    // Ambil data input
+    const nama = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    const subjek = document.getElementById('subjek').value;
+    const pesan = document.getElementById('pesan').value;
+
+    // Logika pengiriman simulasi (bisa disambungkan ke backend PHP / API nantinya)
+    console.log("Pesan Terkirim:", { nama, email, subjek, pesan });
+
+    // Tampilkan notifikasi sukses
+    const alertBox = document.getElementById('pesan-sukses');
+    alertBox.style.display = 'block';
+
+    // Reset isi form
+    this.reset();
+
+    // Sembunyikan alert otomatis setelah 5 detik
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+</body>
+</html>

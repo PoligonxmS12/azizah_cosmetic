@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azizah Cosmetic - Katalog Produk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+
+  /* Menimpa aturan tinggi dari style.css agar gambar 1:1 */
+  .produk-card .swatch-preview {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1 !important;
+    width: 100%;
+    height: auto !important;
+  }
+  
+  .produk-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Agar gambar tidak gepeng */
+    display: block;
+  }
+  
+  /* Sembunyikan kotak warna bawaan jika foto sedang ditampilkan */
+  .produk-card .swatch-preview span {
+    display: none;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .kategori-nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:30px 0 10px;
+  }
+
+  .kategori-nav a{
+    background:var(--white);
+    color:var(--rose-gold-dark);
+    padding:9px 20px;
+    border-radius:20px;
+    font-size:0.88rem;
+    font-weight:500;
+    border:1px solid var(--pink-soft);
+    transition:background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .kategori-nav a:hover{
+    background-color:var(--rose-gold);
+    color:var(--white);
+  }
+
+  .kategori-blok{
+    margin-top:50px;
+    scroll-margin-top:130px;
+  }
+
+  .kategori-blok h3{
+    color:var(--rose-gold-dark);
+    border-left:4px solid var(--rose-gold);
+    padding-left:12px;
+    margin-bottom:6px;
+  }
+
+  .kategori-blok .deskripsi-kategori{
+    color:var(--text-muted);
+    font-size:0.9rem;
+    margin:0 0 5px 16px;
+  }
+
+  .brand-tag{
+    display:inline-block;
+    background:var(--pink-blush, #FBEEF1);
+    color:var(--rose-gold-dark, #9B5A70);
+    font-size:0.72rem;
+    font-weight:600;
+    padding:3px 10px;
+    border-radius:10px;
+    margin-top:8px;
+  }
+
+  .produk-card .harga{
+    color:var(--rose-gold-dark, #9B5A70);
+    font-weight:600;
+    font-size:0.9rem;
+    margin-top:6px;
+    margin-bottom: 12px;
+  }
+
+  /* Tambahan CSS untuk Tombol Keranjang */
+  .btn-tambah {
+    background-color: var(--rose-gold, #C97B84);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .btn-tambah:hover:not([disabled]) {
+    background-color: var(--rose-gold-dark, #9B5A70);
+  }
+
+  .btn-tambah:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<header id="beranda-header">
+  <h1>Katalog Produk</h1>
+  <p class="tagline">Beragam Brand Kosmetik Terpercaya, Semua Ada di Azizah Cosmetic</p>
+</header>
+
+<nav class="menu">
+  <a href="beranda.html">Beranda</a>
+  <a href="katalog.html" class="active">Katalog Produk</a>
+  <a href="stok.html">Ketersediaan Stok</a>
+  <a href="kontak.html">Kontak</a>
+</nav>
+
+<section id="katalog">
+  <h2 id="judul">Semua Produk</h2>
+  <p class="subheading">
+    Sebagai toko retail khusus kosmetik, Azizah Cosmetic menghadirkan produk dari
+    berbagai macam pruduk dan brand terpercaya. Temukan koleksi <span class="highlight">
+  </p>
+
+  <div class="kategori-blok" id="kategori-wardah">
+  <h3>Wardah</h3>
+  <div class="produk-grid">
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="5.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>SUNSCREEN - WARDAH UV SHIELD AIRY SMOOTH SUNSCREEN SERUM</h4>
+      <p>Kulit berminyak menjadi lebih matte dan pori-pori tersamar.</p>
+      <div class="brand-tag">Brand: Wardah</div>
+      <p class="harga">Rp 27.500</p>
+      <button type="button" class="btn-tambah" data-nama="SUNSCREEN - WARDAH UV SHIELD AIRY SMOOTH SUNSCREEN SERUM" data-harga="27500">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="6.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>PELEMBAP MALAM - WARDAH RENEW YOU NIGHT MOISTURIZER</h4>
+      <p>Menjaga elastisitas serta kekencangan kulit dan meremajakannya saat tidur.</p>
+      <div class="brand-tag">Brand: Wardah</div>
+      <p class="harga">Rp 36.000</p>
+      <button type="button" class="btn-tambah" data-nama="PELEMBAP MALAM - WARDAH RENEW YOU NIGHT MOISTURIZER" data-harga="36000">Tambah ke Keranjang</button>
+    </div>
+  </div>
+</div>
+
+<div class="kategori-blok" id="kategori-g2g">
+  <h3>G2G</h3>
+  <div class="produk-grid">
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="2.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>PEMBERSIH WAJAH - GLAD2GLOW PORE CLEARING MICELLAR WATER</h4>
+      <p>Efektif mengangkat riasan tahan air dan membersihkan pori-pori.</p>
+      <div class="brand-tag">Brand: G2G</div>
+      <p class="harga">Rp 20.000</p>
+      <button type="button" class="btn-tambah" data-nama="PEMBERSIH WAJAH - GLAD2GLOW PORE CLEARING MICELLAR WATER" data-harga="20000">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="8.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM PEACH PIE</h4>
+      <p>Warna peach lembut, cocok untuk penampilan natural.</p>
+      <div class="brand-tag">Brand: G2G</div>
+      <p class="harga">Rp 35.000</p>
+      <button type="button" class="btn-tambah" data-nama="LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM PEACH PIE" data-harga="35000">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="7.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM BERRY</h4>
+      <p>Garis bibir tersamarkan, kilau alaminya meningkat.</p>
+      <div class="brand-tag">Brand: G2G</div>
+      <p class="harga">Rp 48.000</p>
+      <button type="button" class="btn-tambah" data-nama="LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM BERRY" data-harga="48000" disabled>Stok Habis</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="12.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>SKIN TINT - GLAD2GLOW FLAWLESS BLURRING SKIN TINT 02 PRALINE</h4>
+      <p>Tampilan wajah halus dan cakupan tinggi didapatkan dengan mudah.</p>
+      <div class="brand-tag">Brand: Glad2Glow</div>
+      <p class="harga">Rp 30.000</p>
+      <button type="button" class="btn-tambah" data-nama="SKIN TINT - GLAD2GLOW FLAWLESS BLURRING SKIN TINT 02 PRALINE" data-harga="30000">Tambah ke Keranjang</button>
+    </div>
+  </div>
+</div>
+
+<div class="kategori-blok" id="kategori-skintific">
+  <h3>Skintific</h3>
+  <div class="produk-grid">
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="4.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>SERUM - SKINTIFIC LACTIC ACID SKIN RENEWAL EXFOLIATING</h4>
+      <p>Kondisi jerawat ditenangkan dan noda pada wajah disamarkan.</p>
+      <div class="brand-tag">Brand: Skintific</div>
+      <p class="harga">Rp 56.000</p>
+      <button type="button" class="btn-tambah" data-nama="SERUM - SKINTIFIC LACTIC ACID SKIN RENEWAL EXFOLIATING" data-harga="56000">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="3.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>MASKER - SKINTIFIC NIACINAMIDE BRIGHT BOOST CLAY STICK</h4>
+      <p>Kulit tampak lebih cerah dan kotoran terangkat secara total.</p>
+      <div class="brand-tag">Brand: Skintific</div>
+      <p class="harga">Rp 50.000</p>
+      <button type="button" class="btn-tambah" data-nama="MASKER - SKINTIFIC NIACINAMIDE BRIGHT BOOST CLAY STICK" data-harga="50000">Tambah ke Keranjang</button>
+    </div>
+  </div>
+</div>
+
+<div class="kategori-blok" id="kategori-garnier">
+  <h3>GARNIER</h3>
+  <div class="produk-grid">
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="9.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER WATER IN OIL</h4>
+      <p>Riasan tahan air terangkat dan kulit ternutrisi tanpa rasa berminyak.</p>
+      <div class="brand-tag">Brand: GARNIER</div>
+      <p class="harga">Rp 41.000</p>
+      <button type="button" class="btn-tambah" data-nama="PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER WATER IN OIL" data-harga="41000">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="10.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER ROSE WATER</h4>
+      <p>Kotoran serta riasan terangkat, kulit tampak lebih cerah dan sehat.</p>
+      <div class="brand-tag">Brand: GARNIER</div>
+      <p class="harga">Rp 26.500</p>
+      <button type="button" class="btn-tambah" data-nama="PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER ROSE WATER" data-harga="26500">Tambah ke Keranjang</button>
+    </div>
+    <div class="produk-card">
+      <div class="swatch-preview" style="background:#FBEEF1;">
+        <!-- Masukkan nama file foto produk Anda pada bagian src="" -->
+        <img src="11.jpg" alt="Lipstik Matte - Rose Nude" class="produk-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <!-- Kotak warna ini akan otomatis muncul jika foto gagal dimuat -->
+        <span style="background:#C97B84;"></span>
+      </div>
+      <h4>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER VITAMIN C</h4>
+      <p>Wajah bersih dari kotoran dan kulit kusam tampak lebih cerah.</p>
+      <div class="brand-tag">Brand: GARNIER</div>
+      <p class="harga">Rp 26.500</p>
+      <button type="button" class="btn-tambah" data-nama="PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER VITAMIN C" data-harga="26500">Tambah ke Keranjang</button>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="formulir">
+    <h3>Keranjang Belanja & Pemesanan</h3>
+    
+    <div id="area-keranjang" style="margin-bottom: 20px; background: #fff; padding: 15px; border-radius: 8px; border: 1px solid #f0dcc7;">
+      <ul id="daftar-item" style="list-style-type: none; padding-left: 0; margin-bottom: 15px;">
+        <li style="color: #888; font-style: italic;">Keranjang masih kosong.</li>
+      </ul>
+      <h4 style="text-align: right; color: #9B5A70; font-family: 'Poppins', sans-serif;">Total: Rp <span id="total-harga">0</span></h4>
+    </div>
+
+    <form id="form-checkout" action="proses_pesanan.php" method="POST">
+      <div class="form-group">
+        <label for="nama_pemesan">Nama Pemesan</label>
+        <input type="text" id="nama_pemesan" name="nama_pemesan" placeholder="Masukkan nama lengkap" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email_pemesan">Alamat Email</label>
+        <input type="email" id="email_pemesan" name="email_pemesan" placeholder="Masukkan email Anda" required>
+      </div>
+
+      <input type="hidden" id="data_keranjang" name="data_keranjang" value="">
+      <input type="hidden" id="total_pembayaran" name="total_pembayaran" value="0">
+
+      <input type="submit" value="Proses Pesanan" id="btn-submit" disabled style="opacity: 0.5;">
+    </form>
+  </div>
+</section>
+
+<footer>
+  Copyright &copy; 2026 Azizah Cosmetic. Semua Hak Dilindungi.
+</footer>
+
+<script>
+  // Array untuk menyimpan data produk
+  let keranjang = [];
+
+  const daftarItemUI = document.getElementById('daftar-item');
+  const totalHargaUI = document.getElementById('total-harga');
+  const inputDataKeranjang = document.getElementById('data_keranjang');
+  const inputTotalPembayaran = document.getElementById('total_pembayaran');
+  const btnSubmit = document.getElementById('btn-submit');
+
+  // Format angka ke Rupiah
+  const formatRupiah = (angka) => {
+    return new Intl.NumberFormat('id-ID').format(angka);
+  };
+
+  // Fungsi memperbarui tampilan keranjang
+  function updateKeranjangUI() {
+    daftarItemUI.innerHTML = '';
+    let total = 0;
+
+    if (keranjang.length === 0) {
+      daftarItemUI.innerHTML = '<li style="color: #888; font-style: italic;">Keranjang masih kosong.</li>';
+      btnSubmit.disabled = true;
+      btnSubmit.style.opacity = '0.5';
+    } else {
+      btnSubmit.disabled = false;
+      btnSubmit.style.opacity = '1';
+      
+      keranjang.forEach((item, index) => {
+        const subtotal = item.harga * item.jumlah;
+        total += subtotal;
+
+        const li = document.createElement('li');
+        li.style.display = 'flex';
+        li.style.justifyContent = 'space-between';
+        li.style.marginBottom = '8px';
+        li.style.borderBottom = '1px dashed #ccc';
+        li.style.paddingBottom = '5px';
+        li.style.fontFamily = "'Poppins', sans-serif";
+        li.style.fontSize = "0.9rem";
+        
+       li.innerHTML = `
+          <div style="display: flex; flex-direction: column;">
+            <span>${item.nama}</span>
+            <div style="margin-top: 4px; display: flex; align-items: center; gap: 8px;">
+              <button type="button" onclick="kurangiJumlah(${index})" style="background:#f0dcc7; color:#9B5A70; border:none; border-radius:4px; width:24px; height:24px; cursor:pointer; font-weight:bold;">-</button>
+              <span style="font-size: 0.9rem; font-weight: 500; min-width: 15px; text-align: center;">${item.jumlah}</span>
+              <button type="button" onclick="tambahJumlah(${index})" style="background:#f0dcc7; color:#9B5A70; border:none; border-radius:4px; width:24px; height:24px; cursor:pointer; font-weight:bold;">+</button>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center;">
+            <span style="margin-right: 10px;">Rp ${formatRupiah(subtotal)}</span>
+            <button type="button" onclick="hapusItem(${index})" style="background:#e74c3c; color:white; border:none; padding:4px 8px; border-radius:4px; cursor:pointer; font-size:12px;" title="Hapus Produk">X</button>
+          </div>
+        `;
+        daftarItemUI.appendChild(li);
+      });
+    }
+
+    // Update total harga & hidden inputs
+    totalHargaUI.innerText = formatRupiah(total);
+    inputTotalPembayaran.value = total;
+    inputDataKeranjang.value = JSON.stringify(keranjang);
+  }
+
+  // Fungsi menambah item ke keranjang
+  function tambahKeKeranjang(nama, harga) {
+    // Cek apakah barang sudah ada di keranjang
+    const itemIndex = keranjang.findIndex(item => item.nama === nama);
+    
+    if (itemIndex > -1) {
+      keranjang[itemIndex].jumlah += 1; // Tambah kuantitas
+    } else {
+      keranjang.push({ nama: nama, harga: parseInt(harga), jumlah: 1 }); // Produk baru
+    }
+    
+    updateKeranjangUI();
+  }
+
+  // Fungsi menghapus item dari keranjang
+  function hapusItem(index) {
+    keranjang.splice(index, 1);
+    updateKeranjangUI();
+  }
+
+  // Fungsi untuk mengurangi jumlah item
+  function kurangiJumlah(index) {
+    // Jika jumlah lebih dari 1, kurangi 1
+    if (keranjang[index].jumlah > 1) {
+      keranjang[index].jumlah -= 1;
+    } else {
+      // Jika jumlahnya 1 dan tombol minus ditekan, hapus produk dari keranjang
+      hapusItem(index);
+      return; // Berhenti di sini agar tidak menjalankan update dua kali
+    }
+    updateKeranjangUI();
+  }
+
+  // Fungsi untuk menambah jumlah item dari dalam keranjang
+  function tambahJumlah(index) {
+    keranjang[index].jumlah += 1;
+    updateKeranjangUI();
+  }
+
+  // Event listener untuk semua tombol "Tambah ke Keranjang"
+  document.querySelectorAll('.btn-tambah').forEach(button => {
+    button.addEventListener('click', function() {
+      // Jika tombol disabled (stok habis), abaikan
+      if(this.disabled) return;
+
+      const nama = this.getAttribute('data-nama');
+      const harga = this.getAttribute('data-harga');
+      tambahKeKeranjang(nama, harga);
+      
+      // Feedback visual sederhana pada tombol
+      const teksAsli = this.innerText;
+      this.innerText = "Berhasil Ditambah!";
+      this.style.backgroundColor = "#8C2E2E";
+      setTimeout(() => { 
+        this.innerText = teksAsli; 
+        this.style.backgroundColor = ""; 
+      }, 1000);
+    });
+  });
+  // Mengambil alih fungsi form saat disubmit
+  document.getElementById('form-checkout').addEventListener('submit', function(e) {
+    e.preventDefault(); // Mencegah halaman pindah ke PHP / blank
+
+    // Ambil data pelanggan
+    const nama = document.getElementById('nama_pemesan').value;
+    const email = document.getElementById('email_pemesan').value;
+    const total = document.getElementById('total_pembayaran').value;
+    
+    // Pastikan keranjang tidak kosong
+    if (keranjang.length === 0) {
+      alert("Keranjang belanja Anda masih kosong!");
+      return;
+    }
+
+    // Susun format pesan WhatsApp
+    let teksPesanan = `Halo Azizah Cosmetic! 🛍️\nSaya ingin memesan produk berikut:\n\n`;
+    
+    keranjang.forEach(item => {
+      teksPesanan += `- ${item.nama} (${item.jumlah}x)\n`;
+    });
+
+    teksPesanan += `\n*Total Harga: Rp ${formatRupiah(total)}*\n\n`;
+    teksPesanan += `Data Pemesan:\nNama: ${nama}\nEmail: ${email}\n\nMohon informasi nomor rekening untuk pembayarannya ya. Terima kasih! ✨`;
+
+    // Ganti 6281234567890 dengan nomor WhatsApp asli toko Anda
+    const nomorWA = "62083861441588"; 
+    
+    // Buat link WhatsApp dan buka di tab baru
+    const urlWA = `https://wa.me/${62083861441588}?text=${encodeURIComponent(teksPesanan)}`;
+    window.open(urlWA, '_blank');
+  });
+</script>
+</body>
+</html>

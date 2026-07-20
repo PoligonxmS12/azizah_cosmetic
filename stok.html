@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azizah Cosmetic - Ketersediaan Stok</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* Fitur Pencarian dan Filter */
+  .stok-kontrol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0 20px;
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+  }
+
+  .search-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid var(--pink-soft, #f0dcc7);
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+  }
+
+  .filter-box select {
+    padding: 10px 20px;
+    border: 1px solid var(--pink-soft, #f0dcc7);
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    background: #fff;
+    color: var(--rose-gold-dark, #9B5A70);
+    cursor: pointer;
+    outline: none;
+  }
+
+  /* Desain Tabel Stok */
+  .tabel-wrapper {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--pink-soft, #f0dcc7);
+    overflow-x: auto;
+    margin-bottom: 40px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  th {
+    background-color: var(--pink-blush, #FBEEF1);
+    color: var(--rose-gold-dark, #9B5A70);
+    font-weight: 600;
+    padding: 15px;
+    border-bottom: 2px solid var(--pink-soft, #f0dcc7);
+  }
+
+  td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+  }
+
+  tr:hover {
+    background-color: #fdfaf7;
+  }
+
+  /* Badge Status */
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .badge-tersedia {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .badge-terbatas {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .badge-habis {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .keterangan-update {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 30px;
+  }
+</style>
+</head>
+<body>
+
+<header id="beranda-header">
+  <h1>Ketersediaan Stok</h1>
+  <p class="tagline">Pantau informasi stok produk kosmetik secara berkala dan real-time</p>
+</header>
+
+<nav class="menu">
+  <a href="beranda.html">Beranda</a>
+  <a href="katalog.html">Katalog Produk</a>
+  <a href="stok.html" class="active">Ketersediaan Stok</a>
+  <a href="kontak.html">Kontak</a>
+</nav>
+
+<section id="stok-section" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+  <h2 style="font-family: 'Playfair Display', serif; color: var(--rose-gold-dark, #9B5A70); text-align: center; margin-bottom: 10px;">Daftar Inventori Barang</h2>
+  <p class="keterangan-update">Terakhir diperbarui: Hari ini, 14:00 WIB</p>
+
+  <div class="stok-kontrol">
+    <div class="search-box">
+      <input type="text" id="input-cari" placeholder="Cari nama produk atau brand...">
+    </div>
+    <div class="filter-box">
+      <select id="filter-kategori">
+        <option value="semua">Semua Kategori</option>
+        <option value="Wardah">Wardah</option>
+        <option value="G2G">G2G</option>
+        <option value="Skintific">Skintific</option>
+        <option value="GARNIER">GARNIER</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tabel-wrapper">
+    <table id="tabel-stok">
+      <thead>
+        <tr data-kategori="Wardah">
+          <td>SUNSCREEN - WARDAH UV SHIELD AIRY SMOOTH SUNSCREEN SERUM</td>
+          <td>SUNSCREEN</td>
+          <td>Wardah</td>
+          <td>Rp 27.500</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="Wardah">
+          <td>PELEMBAP MALAM - WARDAH RENEW YOU NIGHT MOISTURIZER</td>
+          <td>MOISTURIZER</td>
+          <td>Wardah</td>
+          <td>Rp 36.000</td>
+          <td><span class="badge badge-terbatas">Stok Terbatas</span></td>
+        </tr>
+        
+        <tr data-kategori="G2G">
+          <td>PEMBERSIH WAJAH - GLAD2GLOW PORE CLEARING MICELLAR WATER</td>
+          <td>MICELLAR WATER</td>
+          <td>G2G</td>
+          <td>Rp 20.000</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="G2G">
+          <td>LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM PEACH PIE</td>
+          <td>LIP SERUM</td>
+          <td>G2G</td>
+          <td>Rp 35.000</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="G2G">
+          <td>LIP SERUM - GLAD2GLOW BRIGHTENING LIP SERUM BERRY</td>
+          <td>LIP SERUM</td>
+          <td>G2G</td>
+          <td>Rp 48.000</td>
+          <td><span class="badge badge-habis">Habis</span></td>
+        </tr>
+        <tr data-kategori="Glad2Glow">
+          <td>SKIN TINT - GLAD2GLOW FLAWLESS BLURRING SKIN TINT 02 PRALINE</td>
+          <td>SKIN TINT</td>
+          <td>Glad2Glow</td>
+          <td>Rp 30.000</td>
+          <td><span class="badge badge-terbatas">Stok Terbatas</span></td>
+        </tr>
+
+        <tr data-kategori="Skintific">
+          <td>SERUM - SKINTIFIC LACTIC ACID SKIN RENEWAL EXFOLIATING</td>
+          <td>SERUM</td>
+          <td>Skintific</td>
+          <td>Rp 56.000</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="Skintific">
+          <td>MASKER - SKINTIFIC NIACINAMIDE BRIGHT BOOST CLAY STICK</td>
+          <td>MASKER</td>
+          <td>Skintific</td>
+          <td>Rp 50.000</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+
+        <tr data-kategori="GARNIER">
+          <td>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER WATER IN OIL</td>
+          <td>MICELLAR WATER</td>
+          <td>GARNIER</td>
+          <td>Rp 41.000</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="GARNIER">
+          <td>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER ROSE WATER</td>
+          <td>MICELLAR WATER</td>
+          <td>GARNIER</td>
+          <td>Rp 26.500</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+        <tr data-kategori="GARNIER">
+          <td>PEMBERSIH WAJAH - GARNIER MICELLAR CLEANSING WATER VITAMIN C</td>
+          <td>MICELLAR WATER</td>
+          <td>GARNIER</td>
+          <td>Rp 26.500</td>
+          <td><span class="badge badge-tersedia">Tersedia</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Copyright &copy; 2026 Azizah Cosmetic. Semua Hak Dilindungi.
+</footer>
+
+<script>
+  const inputCari = document.getElementById('input-cari');
+  const filterKategori = document.getElementById('filter-kategori');
+  const tabelStok = document.getElementById('tabel-stok');
+  const rows = tabelStok.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+
+  function filterData() {
+    const kataKunci = inputCari.value.toLowerCase();
+    const kategoriPilihan = filterKategori.value;
+
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      const namaProduk = row.getElementsByTagName('td')[0].textContent.toLowerCase();
+      const brand = row.getElementsByTagName('td')[2].textContent.toLowerCase();
+      const kategoriRow = row.getAttribute('data-kategori');
+
+      // Cek kecocokan pencarian teks
+      const cocokPencarian = namaProduk.includes(kataKunci) || brand.includes(kataKunci);
+      // Cek kecocokan kategori
+      const cocokKategori = (kategoriPilihan === 'semua' || kategoriRow === kategoriPilihan);
+
+      if (cocokPencarian && cocokKategori) {
+        row.style.display = '';
+      } else {
+        row.style.display = 'none';
+      }
+    }
+  }
+
+  // Jalankan fungsi filter setiap kali pengguna mengetik atau mengubah select box
+  inputCari.addEventListener('input', filterData);
+  filterKategori.addEventListener('change', filterData);
+</script>
+
+</body>
+</html>
